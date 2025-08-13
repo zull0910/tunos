@@ -1,0 +1,181 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* Divide la página en dos columnas (video y turnos) */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    /* Propiedades del fondo */
+    background-image: url('images/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Estilos de la sección del video (columna izquierda) */
+.media-area {
+    flex: 1; /* Ocupa la mitad del espacio disponible */
+    max-width: 800px; /* Tamaño máximo del video */
+    margin: 100px; /* Espacio alrededor del video */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Reglas para mantener la proporción de aspecto 16:9 del video */
+    position: relative;
+    height: 0;
+    padding-bottom: 23.74%; /* Altura ajustada para una mejor visualización */
+}
+
+/* Estilos para el reproductor de YouTube dentro del contenedor */
+.media-area iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos de la sección de turnos (columna derecha) */
+.waiting-area {
+    flex: 1; /* Ocupa la otra mitad del espacio */
+    max-width: 600px; /* Tamaño máximo para la lista de turnos */
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.lista-turnos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.turno-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 10px;
+    
+}
+
+.turno-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #007bff;
+    animation: fadeIn 0.5s ease-in-out;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.turno-row span {
+    align-self: center;
+}
+
+/* Animación para que los turnos aparezcan suavemente */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos de formulario (se mantienen sin cambios) */
+.container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    margin: 0 5px;
+}
+
+#llamar-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+#llamar-btn:hover {
+    background-color: #218838;
+}
+
+#cancelar-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+#cancelar-btn:hover {
+    background-color: #e0a800;
+}
+
+#atender-btn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+#atender-btn:hover {
+    background-color: #138496;
+}
